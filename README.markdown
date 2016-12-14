@@ -636,26 +636,6 @@ private func makeLocationManager() -> CLLocationManager {
   - `[unowned self]` is not required here. A retain cycle is not created.
   - Location manager has a side-effect for popping up UI to ask the user for permission so fine grain control makes sense here.
 
-
-### Type Inference
-
-Prefer compact code and let the compiler infer the type for constants or variables of single instances. Type inference is also appropriate for small (non-empty) arrays and dictionaries. When required, specify the specific type such as `CGFloat` or `Int16`.
-
-**Preferred:**
-```swift
-let message = "Click the button"
-let currentBounds = computeViewBounds()
-var names = ["Mic", "Sam", "Christine"]
-let maximumWidth: CGFloat = 106.5
-```
-
-**Not Preferred:**
-```swift
-let message: String = "Click the button"
-let currentBounds: CGRect = computeViewBounds()
-let names = [String]()
-```
-
 #### Type Annotation for Empty Arrays and Dictionaries
 
 For empty arrays and dictionaries, use type annotation. (For an array or dictionary assigned to a large, multi-line literal, use type annotation.)
